@@ -4,6 +4,11 @@ interface UserState {
     error: string | null
 }
 
+interface UserAction {
+    type: string,
+    payload?: any
+}
+
 const initialState: UserState = {
     users: [],
     isLoading: false,
@@ -14,7 +19,7 @@ const FETCH_USERS = "FETCH_USERS"
 const FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS"
 const FETCH_USERS_ERROR = "FETCH_USERS_ERROR"
 
-export const userReducer = (state = initialState, action): UserState => {
+export const userReducer = (state = initialState, action: UserAction): UserState => {
     switch (action.type) {
         case FETCH_USERS:
             return { isLoading: true, error: null, users: [] }
