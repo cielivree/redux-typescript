@@ -1,36 +1,10 @@
-interface UserState {
-    users: any[],
-    isLoading: boolean,
-    error: string | null
-}
-
-enum UserActionTypes {
-    FETCH_USERS = "FETCH_USERS",
-    FETCH_USERS_SUCCESS = "FETCH_USERS_SUCCESS",
-    FETCH_USERS_ERROR = "FETCH_USERS_ERROR"
-}
-
-interface FetchUsersAction {
-    type: UserActionTypes.FETCH_USERS
-}
-
-interface FetchUsersSuccessAction {
-    type: UserActionTypes.FETCH_USERS_SUCCESS,
-    payload: any[]
-}
-
-interface FetchUsersErrorAction {
-    type: UserActionTypes.FETCH_USERS_ERROR,
-    payload: string
-}
+import { UserState, UserAction, UserActionTypes } from '../../types/todo'
 
 const initialState: UserState = {
     users: [],
     isLoading: false,
     error: null
 }
-
-type UserAction = FetchUsersAction | FetchUsersSuccessAction | FetchUsersErrorAction
 
 export const userReducer = (state = initialState, action: UserAction): UserState => {
     switch (action.type) {
