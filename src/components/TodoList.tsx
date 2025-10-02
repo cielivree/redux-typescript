@@ -36,6 +36,6 @@ const TodoList: React.FC = () => {
             </div>
         </div>
     )
-    }
+}
 
 export default TodoList
