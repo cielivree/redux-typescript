@@ -1,5 +1,5 @@
 export interface TodoState {
-    todos: [],
+    todos: any[],
     isLoading: boolean,
     error: null | string,
     page: number,
